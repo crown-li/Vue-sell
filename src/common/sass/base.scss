@@ -1,0 +1,57 @@
+$dpr1_5 : 1.5;
+$dpr1_75 : 1.75;
+$dpr2 : 2;
+$dpr2_5 : 2.5;// for mx3
+$dpr2_75 : 2.75;// for 小米note
+$dpr3 : 3;
+$dpr4 : 4;// for 三星note4
+@media (-webkit-min-device-pixel-ratio:$dpr1_5),(min-device-pixel-ratio:$dpr1_5){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.7);
+           transform:scaleY(0.7);
+       }    
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio:$dpr1_75),(min-device-pixel-ratio:$dpr1_75){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.6);
+           transform:scaleY(0.6);
+       }    
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio:$dpr2_5),(min-device-pixel-ratio:$dpr2_5){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.4);
+           transform:scaleY(0.4);
+       }    
+    }
+}
+@media (-webkit-min-device-pixel-ratio:$dpr2_75),(min-device-pixel-ratio:$dpr2_75){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.4);
+           transform:scaleY(0.4);
+       }    
+    }
+}
+@media (-webkit-min-device-pixel-ratio:$dpr3),(min-device-pixel-ratio:$dpr3){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.4);
+           transform:scaleY(0.4);
+       }    
+    }
+}
+@media (-webkit-min-device-pixel-ratio:$dpr4),(min-device-pixel-ratio:$dpr4){
+    .border-1px{
+       &:after{
+           -webkit-transform:scaleY(0.25);
+           transform:scaleY(0.25);
+       }    
+    }
+}
