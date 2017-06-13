@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
     	<div class="tab-item">
     		<router-link to='/goods'>商品</router-link>
@@ -18,12 +18,35 @@
 
 <script>
 	import header from './components/header/header.vue';
+	import Axios from 'axios';
+	const ERR_OK = 0;
 	
 	export default{
 		data() {
 			return {
 				seller: {}
 			};
+		},
+		created() {
+			Axios.get('/api/seller')
+			.then((response) => {
+				// console.log(response);
+				// response = response.body; // 用于vue-resource
+				// console.log(response.data);
+        // console.log(response.status);
+        // console.log(response.statusText);
+        // console.log(response.headers);
+        // console.log(response.config);
+        response = response.data; // axios的数据都在data里面这一点和vue-resource不同
+        // console.log(response.data);
+				if (response.errno === ERR_OK) {
+					this.seller = response.data;
+					// console.log(this.seller);
+				};
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 		},
 		components: {
 			'v-header': header // ES6语法 不写后面的header也可以
