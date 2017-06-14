@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <v-header :seller="seller"></v-header>
+    <v-header :seller="seller" @upup="change" :msg="msg"></v-header>
     <div class="tab border-1px">
     	<div class="tab-item">
     		<router-link to='/goods'>商品</router-link>
@@ -24,7 +24,8 @@
 	export default{
 		data() {
 			return {
-				seller: {}
+				seller: {},
+				msg: '通过触发事件，子组件可以向父组件通信'
 			};
 		},
 		created() {
@@ -50,6 +51,11 @@
 		},
 		components: {
 			'v-header': header // ES6语法 不写后面的header也可以
+		},
+		methods: {
+			change(msg) {
+				this.msg = msg;
+			}
 		}
 	};
 </script>

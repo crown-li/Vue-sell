@@ -51,7 +51,7 @@ router.afterEach((to, from, next) => {
   document.title = to.name;
 });
 
-router.push('/goods'); // 设置默认路由第二种方法  导航式编程  放在router.afterEach后面，可以动态设置网站的title  vue1.0是用的router.go()
+// router.push('/goods'); // 设置默认路由第二种方法  导航式编程  放在router.afterEach后面，可以动态设置网站的title  vue1.0是用的router.go()
 
 // eslint-disable-line no-unused-vars是跳过no-unused-vars的检查
 const app = new Vue({// eslint-disable-line no-unused-vars

@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="content-wrapper">
 			<div class="avatar">
-				<img :src="seller.avatar" width="64" height="64" alt="" />
+				<img :src="seller.avatar" @click="up" width="64" height="64" alt="" />
 			</div>
 			<div class="content">
 				<div class="title">
@@ -36,12 +36,17 @@
 <script type="text/ecmascript-6">
 	export default {
 		props: {
-			seller: { // 将seller对象传给组件
+			seller: { // 接收seller对象（父组件和子组件通信用props）
 				type: Object // 这是vue的prop验证属性的写法
 			}
 		},
 		created() {
 			this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+		},
+		methods: {
+			up() {
+				this.$emit('upup', '子组件向父组件通信成功');
+			}
 		}
 	};
 </script>
